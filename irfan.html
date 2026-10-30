@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Angkringan Teplok - Daftar Harga Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bevan&family=Nunito:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: light;
+            box-sizing: border-box;
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px);
+            --bg: #F5EBDC;
+            --panel: #FFFDF9;
+            --text: #2B1E14;
+            --muted: #725F4C;
+            --accent: #C85A00;
+            --accent-glow: rgba(200, 90, 0, 0.15);
+            --chili: #D33918;
+            --line: #E2D3BC;
+            --chip-bg: #2B1E14;
+            --chip-text: #F5EBDC;
+            --shadow-sm: 0 4px 12px rgba(43, 30, 20, 0.05);
+            --shadow-md: 0 10px 28px -4px rgba(43, 30, 20, 0.08);
+            --shadow-lg: 0 16px 36px -6px rgba(43, 30, 20, 0.12);
+            --display: 'Bevan', Georgia, serif;
+            --body: 'Nunito', system-ui, sans-serif;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                color-scheme: dark;
+                --bg: #0F172A;
+                --panel: #1E293B;
+                --text: #F8FAFC;
+                --muted: #94A3B8;
+                --accent: #F59E0B;
+                --accent-glow: rgba(245, 158, 11, 0.2);
+                --chili: #EF4444;
+                --line: #334155;
+                --chip-bg: #F59E0B;
+                --chip-text: #0F172A;
+                --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+                --shadow-md: 0 10px 28px -4px rgba(0, 0, 0, 0.4);
+                --shadow-lg: 0 16px 36px -6px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        :root[data-theme="dark"] {
+            color-scheme: dark;
+            --bg: #0F172A;
+            --panel: #1E293B;
+            --text: #F8FAFC;
+            --muted: #94A3B8;
+            --accent: #F59E0B;
+            --accent-glow: rgba(245, 158, 11, 0.2);
+            --chili: #EF4444;
+            --line: #334155;
+            --chip-bg: #F59E0B;
+            --chip-text: #0F172A;
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 10px 28px -4px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 16px 36px -6px rgba(0, 0, 0, 0.5);
+        }
+
+        html {
+            scroll-padding-top: env(safe-area-inset-top, 0px);
+            scroll-behavior: smooth;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--body);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, p {
+            margin: 0;
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        .wrap {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Terpal gerobak top banner */
+        .terpal {
+            height: 32px;
+            background: repeating-linear-gradient(90deg, var(--chili) 0 48px, var(--panel) 48px 96px);
+            border-radius: 0 0 24px 24px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+
+        /* Hero */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 28px 48px;
+            padding-top: 40px;
+            padding-bottom: 48px;
+        }
+
+        .hero-text {
+            flex: 1 1 360px;
+        }
+
+        .badge-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background: var(--accent-glow);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            border-radius: 99px;
+            font-size: 13px;
+            font-weight: 800;
+            margin-bottom: 14px;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .jam {
+            margin-bottom: 12px;
+            font-weight: 800;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+        }
+
+        h1 {
+            margin-bottom: 16px;
+            font-family: var(--display);
+            font-weight: 400;
+            font-size: clamp(42px, 8.5vw, 76px);
+            line-height: 1.05;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .slogan {
+            max-width: 480px;
+            font-size: 18px;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .hero-art {
+            flex: 1 1 300px;
+            max-width: 380px;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Ambient Glow behind SVG */
+        .hero-art::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: var(--accent);
+            opacity: 0.22;
+            filter: blur(60px);
+            border-radius: 50%;
+            top: 20%;
+            z-index: 0;
+        }
+
+        .gerobak-svg {
+            width: 100%;
+            height: auto;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 12px 20px rgba(0,0,0,0.12));
+        }
+
+        .gerobak-svg .atap-merah { fill: var(--chili); }
+        .gerobak-svg .atap-kuning { fill: var(--accent); }
+        .gerobak-svg .kayu-gelap { fill: #3D2314; }
+        .gerobak-svg .kayu-terang { fill: #7E4B28; }
+        .gerobak-svg .rangka { fill: var(--text); }
+        .gerobak-svg .daun-pisang { fill: #2E6B27; }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .gerobak-svg .uap {
+                animation: uap-berhembus 2.6s ease-in-out infinite;
+            }
+
+            @keyframes uap-berhembus {
+                0% { opacity: 0.2; transform: translateY(0) scaleX(1); }
+                50% { opacity: 0.8; transform: translateY(-5px) scaleX(1.15); }
+                100% { opacity: 0.2; transform: translateY(-10px) scaleX(1); }
+            }
+        }
+
+        /* Kontrol */
+        .kontrol {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            gap: 20px 24px;
+            padding-bottom: 28px;
+        }
+
+        .cari {
+            flex: 1 1 280px;
+            position: relative;
+        }
+
+        .cari label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 800;
+            font-size: 15px;
+            letter-spacing: 0.2px;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .cari input {
+            width: 100%;
+            min-height: 52px;
+            padding: 0 16px 0 46px;
+            border: 1.5px solid var(--line);
+            border-radius: 16px;
+            background: var(--panel);
+            color: var(--text);
+            font: inherit;
+            font-size: 16px;
+            box-shadow: var(--shadow-sm);
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
+
+        .cari input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px var(--accent-glow), var(--shadow-md);
+        }
+
+        .cari-icon {
+            position: absolute;
+            left: 16px;
+            width: 20px;
+            height: 20px;
+            stroke: var(--muted);
+            fill: none;
+            stroke-width: 2.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            pointer-events: none;
+        }
+
+        .cari input::placeholder {
+            color: var(--muted);
+            opacity: 0.8;
+        }
+
+        .tombol {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tombol button {
+            min-height: 46px;
+            padding: 0 20px;
+            border: 1.5px solid var(--line);
+            border-radius: 999px;
+            background: var(--panel);
+            color: var(--text);
+            font: inherit;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .tombol button:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .tombol button[aria-pressed="true"] {
+            background: var(--chip-bg);
+            border-color: var(--chip-bg);
+            color: var(--chip-text);
+            font-weight: 800;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+            transform: translateY(-1px);
+        }
+
+        .status {
+            padding-bottom: 20px;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--muted);
+        }
+
+        /* Kartu menu */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 24px;
+            align-items: start;
+        }
+
+        .kartu {
+            padding: 24px 26px 20px;
+            border: 1.5px solid var(--line);
+            border-radius: 24px;
+            background: var(--panel);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s, border-color 0.25s;
+        }
+
+        .kartu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent), var(--chili));
+            opacity: 0.85;
+        }
+
+        .kartu:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .kartu h2 {
+            margin-bottom: 14px;
+            font-family: var(--display);
+            font-weight: 400;
+            font-size: 26px;
+            color: var(--accent);
+            letter-spacing: -0.3px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .kartu ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .kartu li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 8px;
+            margin: 0 -8px;
+            border-radius: 10px;
+            transition: background 0.15s ease;
+        }
+
+        .kartu li:hover {
+            background: var(--accent-glow);
+        }
+
+        .nama-wrapper {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nama-text {
+            font-weight: 700;
+        }
+
+        .badge-populer {
+            font-size: 10px;
+            font-weight: 800;
+            padding: 2px 7px;
+            background: var(--chili);
+            color: #FFF;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            line-height: 1.3;
+        }
+
+        .titik {
+            flex: 1;
+            min-width: 16px;
+            border-bottom: 2px dotted var(--line);
+            position: relative;
+            top: 2px;
+        }
+
+        .harga {
+            font-weight: 800;
+            white-space: nowrap;
+            color: var(--text);
+            font-size: 16px;
+        }
+
+        .kosong {
+            padding: 60px 0;
+            text-align: center;
+            color: var(--muted);
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        /* Kaki / Footer */
+        .kaki-card {
+            margin-top: 48px;
+            margin-bottom: 48px;
+            padding: 28px 32px;
+            background: var(--panel);
+            border: 1.5px solid var(--line);
+            border-radius: 24px;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .kaki-info {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .kaki-info strong {
+            color: var(--text);
+        }
+
+        .btn-wa {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: #25D366;
+            color: #FFF;
+            font-weight: 800;
+            font-size: 15px;
+            border-radius: 99px;
+            text-decoration: none;
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-wa:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(37, 211, 102, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="terpal" aria-hidden="true"></div>
+
+    <header class="wrap hero">
+        <div class="hero-text">
+            <div class="badge-tag">🔥 Khas Nusantara</div>
+            <h1>Angkringan Teplok</h1>
+            <p class="jam">
+                <span>🕒</span> Buka Setiap Hari (17.00 - 01.00 WIB)
+            </p>
+            <p class="slogan">Nasi kucing, sate, gorengan, dan wedang hangat. Duduk lesehan, harga ramah kantong.</p>
+        </div>
+        <div class="hero-art">
+            <svg class="gerobak-svg" viewBox="0 0 320 240" role="img" aria-label="Ilustrasi Gerobak Angkringan Tradisional">
+                <defs>
+                    <radialGradient id="cahaya-gerobak" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#FFB938" stop-opacity="0.5" />
+                        <stop offset="100%" stop-color="#FFB938" stop-opacity="0" />
+                    </radialGradient>
+                </defs>
+                <circle cx="160" cy="110" r="110" fill="url(#cahaya-gerobak)" />
+
+                <!-- Atap Terpal -->
+                <path d="M 20 45 Q 160 25 300 45 L 310 65 L 10 65 Z" class="atap-merah" />
+                <path d="M 10 65 Q 160 75 310 65 L 300 78 L 20 78 Z" fill="var(--panel)" />
+
+                <!-- Tiang Penyangga -->
+                <rect x="45" y="78" width="10" height="102" class="kayu-terang" />
+                <rect x="265" y="78" width="10" height="102" class="kayu-terang" />
+
+                <!-- Etalase Kaca & Makanan -->
+                <rect x="55" y="98" width="80" height="42" fill="none" stroke="var(--line)" stroke-width="2" rx="3" />
+                <polygon points="62,138 72,118 82,138" class="daun-pisang" />
+                <polygon points="76,138 86,115 96,138" fill="#1E461A" />
+                <polygon points="90,138 100,120 110,138" class="daun-pisang" />
+
+                <!-- Sate-satean -->
+                <rect x="180" y="133" width="70" height="5" fill="var(--muted)" rx="2" />
+                <line x1="185" y1="133" x2="185" y2="115" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" />
+                <line x1="195" y1="133" x2="195" y2="110" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" />
+                <line x1="205" y1="133" x2="205" y2="118" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" />
+                <line x1="215" y1="133" x2="215" y2="112" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" />
+
+                <!-- Ceret Wedang -->
+                <path d="M 142 138 L 146 112 L 166 112 L 170 138 Z" fill="#8899A6" />
+                <ellipse cx="156" cy="112" rx="10" ry="3" fill="#B0BEC5" />
+                <rect x="153" y="104" width="6" height="8" rx="1" class="rangka" />
+                
+                <path d="M 168 138 L 172 105 L 192 105 L 196 138 Z" fill="#78909C" />
+                <ellipse cx="182" cy="105" rx="10" ry="3" fill="#90A4AE" />
+                <rect x="179" y="97" width="6" height="8" rx="1" class="rangka" />
+
+                <!-- Uap Ceret Wedang -->
+                <path class="uap" d="M 156 100 Q 150 90 158 80" fill="none" stroke="var(--panel)" stroke-width="2.5" stroke-linecap="round" />
+                <path class="uap" d="M 182 93 Q 188 83 180 73" fill="none" stroke="var(--panel)" stroke-width="2.5" stroke-linecap="round" />
+
+                <!-- Lampu Teplok -->
+                <line x1="160" y1="65" x2="160" y2="82" stroke="var(--text)" stroke-width="2" />
+                <circle cx="160" cy="85" r="5" fill="var(--accent)" />
+
+                <!-- Badan Kayu Gerobak -->
+                <rect x="35" y="138" width="250" height="42" rx="4" class="kayu-gelap" />
+                <rect x="42" y="143" width="236" height="32" rx="2" class="kayu-terang" />
+                <rect x="52" y="147" width="68" height="24" rx="2" class="kayu-gelap" />
+                <rect x="126" y="147" width="68" height="24" rx="2" class="kayu-gelap" />
+                <rect x="200" y="147" width="68" height="24" rx="2" class="kayu-gelap" />
+
+                <!-- Roda Gerobak -->
+                <circle cx="90" cy="190" r="28" fill="none" stroke="var(--text)" stroke-width="6" />
+                <circle cx="90" cy="190" r="7" class="atap-kuning" />
+                <line x1="90" y1="162" x2="90" y2="218" stroke="var(--text)" stroke-width="3" />
+                <line x1="62" y1="190" x2="118" y2="190" stroke="var(--text)" stroke-width="3" />
+                <line x1="70" y1="170" x2="110" y2="210" stroke="var(--text)" stroke-width="2" />
+                <line x1="70" y1="210" x2="110" y2="170" stroke="var(--text)" stroke-width="2" />
+
+                <!-- Kaki Gerobak -->
+                <rect x="250" y="180" width="12" height="28" class="kayu-gelap" />
+                <rect x="240" y="205" width="32" height="6" rx="2" class="rangka" />
+                <path d="M 285 150 L 310 150 L 310 158 L 285 158 Z" class="kayu-gelap" />
+            </svg>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <div class="kontrol">
+            <div class="cari">
+                <label for="cari">Cari menu favoritmu</label>
+                <div class="input-wrapper">
+                    <svg class="cari-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input id="cari" type="search" placeholder="Ketik nama menu, misalnya sate atau kopi" autocomplete="off">
+                </div>
+            </div>
+            <div id="tombol" class="tombol" role="group" aria-label="Pilih kategori"></div>
+        </div>
+
+        <p id="status" class="status" aria-live="polite"></p>
+        <div id="daftar" class="grid"></div>
+        <p id="kosong" class="kosong" hidden>Menu tidak ditemukan. Coba kata kunci lain.</p>
+    </main>
+
+    <footer class="wrap">
+        <div class="kaki-card">
+            <div class="kaki-info">
+                <p>📍 <strong>Lokasi:</strong> Jl. Pojok Utara. Cimahi</p>
+                <p>💬 <strong>Pesan Antar / Info:</strong> Kontak Admin via WhatsApp</p>
+                <p style="font-size: 13px; opacity: 0.8;">*Harga dapat berubah sewaktu-waktu.</p>
+            </div>
+            <a href="https://wa.me/6283103747931" target="_blank" class="btn-wa">
+                <span>📱 Pesan Via WhatsApp</span>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        var KATEGORI = ['Nasi', 'Sate & Lauk', 'Gorengan', 'Ayam & Bebek', 'Minuman'];
+
+        var MENU = [
+            { kategori: 'Nasi', nama: 'Nasi kucing sambal teri', harga: 3000, tag: 'Favorit' },
+            { kategori: 'Nasi', nama: 'Nasi kucing oseng tempe', harga: 3000 },
+            { kategori: 'Nasi', nama: 'Nasi kucing ayam suwir', harga: 4000, tag: 'Populer' },
+
+            { kategori: 'Sate & Lauk', nama: 'Sate usus', harga: 2000 },
+            { kategori: 'Sate & Lauk', nama: 'Sate kulit', harga: 2000, tag: 'Favorit' },
+            { kategori: 'Sate & Lauk', nama: 'Sate bakso / sosis', harga: 2500 },
+            { kategori: 'Sate & Lauk', nama: 'Sate telur puyuh', harga: 3000, tag: 'Favorit' },
+            { kategori: 'Sate & Lauk', nama: 'Sate ati ampela', harga: 3000 },
+            { kategori: 'Sate & Lauk', nama: 'Ceker ayam', harga: 3000 },
+
+            { kategori: 'Gorengan', nama: 'Bakwan', harga: 1500 },
+            { kategori: 'Gorengan', nama: 'Tempe goreng', harga: 1500 },
+            { kategori: 'Gorengan', nama: 'Tahu isi', harga: 2000 },
+            { kategori: 'Gorengan', nama: 'Tempe mendoan', harga: 2000, tag: 'Favorit' },
+            { kategori: 'Gorengan', nama: 'Pisang goreng', harga: 2000 },
+
+            { kategori: 'Ayam & Bebek', nama: 'Ayam goreng', harga: 15000 },
+            { kategori: 'Ayam & Bebek', nama: 'Ayam bakar', harga: 17000 },
+            { kategori: 'Ayam & Bebek', nama: 'Bebek goreng', harga: 22000 },
+            { kategori: 'Ayam & Bebek', nama: 'Bebek bakar', harga: 24000 },
+
+            { kategori: 'Minuman', nama: 'Teh tawar hangat', harga: 2000 },
+            { kategori: 'Minuman', nama: 'Teh manis (panas / es)', harga: 3000 },
+            { kategori: 'Minuman', nama: 'Jeruk (panas / es)', harga: 4000 },
+            { kategori: 'Minuman', nama: 'Wedang jahe', harga: 4000, tag: 'Favorit' },
+            { kategori: 'Minuman', nama: 'Kopi hitam', harga: 4000 },
+            { kategori: 'Minuman', nama: 'Kopi susu', harga: 5000 },
+            { kategori: 'Minuman', nama: 'Kopi joss (arang)', harga: 6000, tag: 'Khas' },
+            { kategori: 'Minuman', nama: 'Susu jahe', harga: 6000 }
+        ];
+
+        var kategoriAktif = 'Semua';
+        var kataKunci = '';
+
+        var elDaftar = document.getElementById('daftar');
+        var elTombol = document.getElementById('tombol');
+        var elStatus = document.getElementById('status');
+        var elKosong = document.getElementById('kosong');
+        var elCari = document.getElementById('cari');
+
+        function rupiah(angka) {
+            return 'Rp ' + angka.toLocaleString('id-ID');
+        }
+
+        function buatTombol() {
+            ['Semua'].concat(KATEGORI).forEach(function (nama) {
+                var tombol = document.createElement('button');
+                tombol.type = 'button';
+                tombol.textContent = nama;
+                tombol.setAttribute('aria-pressed', nama === kategoriAktif ? 'true' : 'false');
+                tombol.addEventListener('click', function () {
+                    kategoriAktif = nama;
+                    elTombol.querySelectorAll('button').forEach(function (b) {
+                        b.setAttribute('aria-pressed', b === tombol ? 'true' : 'false');
+                    });
+                    tampilkan();
+                });
+                elTombol.appendChild(tombol);
+            });
+        }
+
+        function tampilkan() {
+            elDaftar.textContent = '';
+            var jumlah = 0;
+
+            KATEGORI.forEach(function (kategori) {
+                if (kategoriAktif !== 'Semua' && kategoriAktif !== kategori) return;
+
+                var item = MENU.filter(function (m) {
+                    return m.kategori === kategori && m.nama.toLowerCase().indexOf(kataKunci) !== -1;
+                });
+                if (item.length === 0) return;
+                jumlah += item.length;
+
+                var kartu = document.createElement('section');
+                kartu.className = 'kartu';
+
+                var judul = document.createElement('h2');
+                judul.textContent = kategori;
+                kartu.appendChild(judul);
+
+                var daftar = document.createElement('ul');
+                item.forEach(function (m) {
+                    var li = document.createElement('li');
+                    
+                    var namaWrap = document.createElement('span');
+                    namaWrap.className = 'nama-wrapper';
+
+                    var nama = document.createElement('span');
+                    nama.className = 'nama-text';
+                    nama.textContent = m.nama;
+                    namaWrap.appendChild(nama);
+
+                    if (m.tag) {
+                        var badge = document.createElement('span');
+                        badge.className = 'badge-populer';
+                        badge.textContent = m.tag;
+                        namaWrap.appendChild(badge);
+                    }
+
+                    var titik = document.createElement('span');
+                    titik.className = 'titik';
+                    titik.setAttribute('aria-hidden', 'true');
+
+                    var harga = document.createElement('span');
+                    harga.className = 'harga';
+                    harga.textContent = rupiah(m.harga);
+
+                    li.appendChild(namaWrap);
+                    li.appendChild(titik);
+                    li.appendChild(harga);
+                    daftar.appendChild(li);
+                });
+                kartu.appendChild(daftar);
+                elDaftar.appendChild(kartu);
+            });
+
+            elKosong.hidden = jumlah !== 0;
+            elStatus.textContent = jumlah === 0 ? '' : 'Menampilkan ' + jumlah + ' menu';
+        }
+
+        elCari.addEventListener('input', function () {
+            kataKunci = elCari.value.trim().toLowerCase();
+            tampilkan();
+        });
+
+        buatTombol();
+        tampilkan();
+    </script>
+</body>
+
+</html>
